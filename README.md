@@ -1,2 +1,0 @@
-Calibrated-Photometric-Stereo
-=============================
