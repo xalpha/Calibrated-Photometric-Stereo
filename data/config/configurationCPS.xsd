@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+>
+
+<!--                    -->
+<!-- Definition of type -->
+<!--                    -->
+
+<!-- string -->
+<xs:simpleType name="BooleanType">
+	<xs:restriction base="xs:boolean" />
+</xs:simpleType>
+<xs:simpleType name="StringType">
+	<xs:restriction base="xs:string" />
+</xs:simpleType>
+<!-- decimal values: 0.1, -3.5, ...-->
+<xs:simpleType name="DecimalType">
+	<xs:restriction base="xs:decimal" />
+</xs:simpleType>
+<!-- integer value: -4, 0, 20 -->
+<xs:simpleType name="IntType">
+	<xs:restriction base="xs:integer" />
+</xs:simpleType>
+<!-- positive integer value: 1, 2, ... -->
+<xs:simpleType name="IntPosType">
+	<xs:restriction base="xs:positiveInteger" />
+</xs:simpleType>
+<!-- non-positive integer value: ..., -2, -1, 0 -->
+<xs:simpleType name="IntNonPosType">
+	<xs:restriction base="xs:nonPositiveInteger" />
+</xs:simpleType>
+<!-- positive integer value: ..., -2, -1 -->
+<xs:simpleType name="IntNegType">
+	<xs:restriction base="xs:negativeInteger" />
+</xs:simpleType>
+<!-- non-positive integer value: 0, 1, 2, ... -->
+<xs:simpleType name="IntNonNegType">
+	<xs:restriction base="xs:nonNegativeInteger" />
+</xs:simpleType>
+<!-- list of xs:string -->
+<xs:simpleType name="StringList">
+	<xs:list itemType="StringType" />
+</xs:simpleType>
+<!-- list of xs:decimal -->
+<xs:simpleType name="DecimalList">
+	<xs:list itemType="DecimalType" />
+</xs:simpleType>
+<!-- list of xs:nonNegativeInteger -->
+<xs:simpleType name="IntNonNegList">
+	<xs:list itemType="IntNonNegType" />
+</xs:simpleType>
+
+<!--                                 -->
+<!-- Definition of Reflectance model -->
+<!--                                 -->
+<xs:simpleType name="ReflectanceModelType">
+	<xs:restriction base="StringType">
+		<xs:enumeration value="Lambertian" />
+		<xs:enumeration value="Phong" />
+		<xs:enumeration value="Blinn-Phong" />
+		<xs:enumeration value="Oren–Nayar" />
+		<xs:enumeration value="Torrance-Sparrow" />
+		<xs:enumeration value="Cook–Torrance" />
+	</xs:restriction>
+</xs:simpleType>
+
+<!--                            -->
+<!-- Definition of Light source -->
+<!--                            -->
+<xs:simpleType name="LightDirectionType">
+	<xs:restriction base="StringType" />
+</xs:simpleType>
+
+<xs:simpleType name="LightIntensityType">
+	<xs:restriction base="DecimalType" />
+</xs:simpleType>
+
+<!--                           -->
+<!-- Definition of Observation -->
+<!--                           -->
+<xs:complexType name="ObservationSingleType">
+	<xs:sequence>
+		<xs:element name="Image" type="StringType" />
+		<xs:element name="LightDirection" type="LightDirectionType" />
+		<xs:element name="LightIntensity" type="LightIntensityType" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="ColorType">
+	<xs:restriction base="IntNonNegType">
+		<xs:enumeration value="1" />
+		<xs:enumeration value="3" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="ObservationType">
+	<xs:sequence>
+		<xs:element name="DirectoryObservation" type="StringType" />
+		<xs:element name="ObservationMask" minOccurs="0" type="StringType" />
+		<xs:element name="ObservationSingle" minOccurs="3" maxOccurs="unbounded" type="ObservationSingleType" />
+		<xs:element name="Color" type="ColorType" />
+	</xs:sequence>
+</xs:complexType>
+
+<!--                                            -->
+<!-- Definition of Calibrated Photometric Stereo-->
+<!--                                            -->
+<xs:complexType name="CalibratedPhotometricStereoType">
+	<xs:sequence>
+		<xs:element name="Observation" type="ObservationType" />
+		<xs:element name="ReflectanceModel" type="ReflectanceModelType" />
+		<xs:element name="DirectoryOutput" type="StringType" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:element name="CalibratedPhotometricStereo" type="CalibratedPhotometricStereoType" />
+
+</xs:schema>

@@ -1,0 +1,4 @@
+#define STR_DIR_DATA "@DATA_DIR@"
+#define STR_DIR_DATA_IMAGE "@DATA_DIR@/image"
+#define STR_DIR_DATA_PRIOR "@DATA_DIR@/prior"
+#define STR_DIR_DATA_SEGMENTATION "@DATA_DIR@/segmentation"

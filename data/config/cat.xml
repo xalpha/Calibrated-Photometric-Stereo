@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CalibratedPhotometricStereo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="configurationCPS.xsd">
+	<Observation>
+		<DirectoryObservation>../data/psmImages/cat/</DirectoryObservation>
+		<ObservationMask>cat.mask.tga</ObservationMask>
+		<ObservationSingle>
+			<Image>cat.0.tga</Image>
+			<LightDirection>0.403259 0.480808 0.778592</LightDirection>
+			<LightIntensity>1.0</LightIntensity>
+		</ObservationSingle>
+		<ObservationSingle>
+			<Image>cat.1.tga</Image>
+			<LightDirection>0.0982272 0.163712 0.981606</LightDirection>
+			<LightIntensity>1.0</LightIntensity>
+		</ObservationSingle>
+		<ObservationSingle>
+			<Image>cat.2.tga</Image>
+			<LightDirection>-0.0654826 0.180077 0.98147</LightDirection>
+			<LightIntensity>1.0</LightIntensity>
+		</ObservationSingle>
+		<ObservationSingle>
+			<Image>cat.3.tga</Image>
+			<LightDirection>-0.127999 0.431998 0.892745</LightDirection>
+			<LightIntensity>1.0</LightIntensity>
+		</ObservationSingle>
+		<ObservationSingle>
+			<Image>cat.4.tga</Image>
+			<LightDirection>-0.328606 0.485085 0.810377</LightDirection>
+			<LightIntensity>1.0</LightIntensity>
+		</ObservationSingle>
+		<ObservationSingle>
+			<Image>cat.5.tga</Image>
+			<LightDirection>-0.110339 0.53593 0.837021</LightDirection>
+			<LightIntensity>1.0</LightIntensity>
+		</ObservationSingle>
+		<ObservationSingle>
+			<Image>cat.6.tga</Image>
+			<LightDirection>0.239071 0.41439 0.878138</LightDirection>
+			<LightIntensity>1.0</LightIntensity>
+		</ObservationSingle>
+		<ObservationSingle>
+			<Image>cat.7.tga</Image>
+			<LightDirection>0.0642302 0.417497 0.906406</LightDirection>
+			<LightIntensity>1.0</LightIntensity>
+		</ObservationSingle>
+		<ObservationSingle>
+			<Image>cat.8.tga</Image>
+			<LightDirection>0.12931 0.339438 0.931698</LightDirection>
+			<LightIntensity>1.0</LightIntensity>
+		</ObservationSingle>
+		<ObservationSingle>
+			<Image>cat.9.tga</Image>
+			<LightDirection>0.0323953 0.340151 0.939813</LightDirection>
+			<LightIntensity>1.0</LightIntensity>
+		</ObservationSingle>
+		<ObservationSingle>
+			<Image>cat.10.tga</Image>
+			<LightDirection>0.0985318 0.0492659 0.993914</LightDirection>
+			<LightIntensity>1.0</LightIntensity>
+		</ObservationSingle>
+		<ObservationSingle>
+			<Image>cat.11.tga</Image>
+			<LightDirection>-0.16119 0.354617 0.921013</LightDirection>
+			<LightIntensity>1.0</LightIntensity>
+		</ObservationSingle>
+		<Color>3</Color>
+	</Observation>
+	<ReflectanceModel>Lambertian</ReflectanceModel>
+	<DirectoryOutput>../data/result/cat/</DirectoryOutput>
+</CalibratedPhotometricStereo>
