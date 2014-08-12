@@ -1,7 +1,12 @@
 Calibrated-Photometric-Stereo
 =============================
 
-This project is to implement simple calibrated photometric stereo that computes normal vector map given a set of images taken under different light conditions and the light source information.
+This project is to implement simple calibrated photometric stereo that computes normal vector map given a set of images taken under different light conditions and the light source information. 
+
+Assumed reflectance model;
+- current version assumes the Lambertian reflection model
+- future version will handle specular reflection models
+
 The code assumes that:
 - you have photometric stereo image datasets provided by [1] in PSMDATA_DIR
 -- PSMDATA_DIR is set as data/psmImages/
